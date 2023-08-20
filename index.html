@@ -25,18 +25,18 @@
               <a href="./index.html">Home</a>
             </li>
             <li>
-              <a href="#" onclick="handleAboutPopup()">About</a>
+              <a href="mailto:support@calculatediscount.xyz">Contact Us</a>
             </li>
             <li>
-              <a href="#team">Team</a>
-            </li>
-            <li>
-              <a href="mailto:support@calculatediscount.xyz">Contact</a>
+              <a href="m#">Donet Us</a>
             </li>
             <li>
               <a href="#" onclick="handlePrivacyPolicyPopup()"
                 >Privacy Policy</a
               >
+            </li>
+            <li>
+              <a href="#" onclick="handleAboutPopup()">About</a>
             </li>
           </ul>
         </nav>
@@ -55,8 +55,8 @@
               <i class="fa-solid fa-chevron-down"></i>
             </div>
             <ul class="position-options">
-              <li data-value="">As a customer</li>
-              <li data-value="">As a buyer</li>
+              <li data-value="customer">As a Customer</li>
+              <li data-value="seller">As a Seller</li>
             </ul>
           </div>
           <div class="custom-select">
@@ -78,11 +78,11 @@
           <div>
             <label for="originalPrice"> Original price </label>
             <div class="input_group">
-              <div id="inputMoneySymbole">
-                <span id="doller_icon">
+              <div class="inputMoneySymbole">
+                <span class="doller_icon">
                   <i class="fa-solid fa-dollar-sign"></i>
                 </span>
-                <span id="tk_icon" class="tk_icon">
+                <span class="tk_icon">
                   <i class="fa-solid fa-bangladeshi-taka-sign"></i>
                 </span>
               </div>
@@ -99,8 +99,30 @@
           <button onclick="calculatePercentage()">Calculator</button>
         </div>
         <div class="result">
-          <h5>Original price: <span id="originalPriceResult"></span></h5>
-          <h5>Discount price: <span id="discountedPrice"></span></h5>
+          <h5>
+            Discount price:
+            <div class="inputMoneySymbole">
+              <span class="doller_icon">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </span>
+              <span class="tk_icon">
+                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+              </span>
+            </div>
+            <span id="discountedPrice"></span>
+          </h5>
+          <h5>
+            <span class="savings">Savings:</span>
+            <div class="inputMoneySymbole">
+              <span class="doller_icon">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </span>
+              <span class="tk_icon">
+                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+              </span>
+            </div>
+            <span id="savings"></span>
+          </h5>
         </div>
       </div>
     </section>
@@ -108,6 +130,10 @@
 
     <!-- --------------- About Start --------- -->
     <div class="about popup">
+      <button onclick="handleCloseAbout()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <p>
         A discount price calculator is a tool that helps you calculate the
         discounted price of a product or service. If you are a customer then you
@@ -116,14 +142,15 @@
         lose if you give percent discount through our website and that too very
         easily. So use our website without delay.
       </p>
-      <div>
-        <button onclick="handleCloseAbout()">Close</button>
-      </div>
     </div>
     <!-- --------------- About End --------- -->
 
     <!-- --------------- Privacy Policy Start --------- -->
     <div class="privacy_policy popup">
+      <button onclick="handleClosePrivacyPolicyPopup()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <div>
         <p><b>Privacy Policy</b></p>
         <p>
@@ -214,26 +241,34 @@
           latest update.
         </p>
       </div>
-      <div class="btn">
-        <button onclick="handleClosePrivacyPolicyPopup()">Close</button>
-      </div>
     </div>
     <!-- --------------- Privacy Policy End --------- -->
 
     <!-- --------------- Fqa Start --------- -->
     <section class="fqa">
       <div class="container">
-        <h1>FQA</h1>
+        <h1 class="title">FQA</h1>
         <div class="fqa_wapper">
-          <div>
-            <h2>What is 25% off of 1500?</h2>
+          <div class="card">
+            <div class="question">
+              <div>
+                <i class="fa-solid fa-info"></i>
+              </div>
+              <h2>What is 25% off of 1500?</h2>
+            </div>
             <p>
               25% off of 1500 is 375. The discounted amount would be 1125 and
               the savings amount is 375.
             </p>
           </div>
-          <div>
-            <h2>How to calculate a discount?</h2>
+          <div class="card">
+            <div class="question">
+              <div>
+                <i class="fa-solid fa-info"></i>
+              </div>
+              <h2>How to calculate a discount?</h2>
+            </div>
+
             <p>A Quick Guide to Calculating Discounts:</p>
             <ol>
               <li>Determine the original price.</li>
@@ -247,8 +282,13 @@
               discount. $100 - $20 = $80 final price.
             </p>
           </div>
-          <div>
-            <h2>How do I calculate a 25% discount?</h2>
+          <div class="card">
+            <div class="question">
+              <div>
+                <i class="fa-solid fa-info"></i>
+              </div>
+              <h2>How do I calculate a 25% discount?</h2>
+            </div>
             <p>
               Calculating a 25% discount is simple: Multiply the original price
               by 0.25. Subtract the result from the original price to get the
@@ -268,7 +308,7 @@
             <img src="./image/logo.jpg" alt="" />
           </div>
           <small class="copyright"
-            >Developed by
+            >Copyright © 2023 
             <a href="https://mostafizar.netlify.app/">Mostafizar</a>
           </small>
         </div>

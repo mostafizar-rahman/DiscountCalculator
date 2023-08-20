@@ -23,7 +23,7 @@ function calculatePercentage() {
 
     // Display the result in the 'discountedPrice' input field
     document.getElementById("discountedPrice").innerHTML = discountedPrice;
-    document.getElementById("originalPriceResult").innerHTML = originalPrice;
+    document.getElementById("savings").innerHTML = originalPrice - discountedPrice;
 
     // Clear input filed
     if (discountedPrice) {
@@ -57,8 +57,12 @@ function handleClosePrivacyPolicyPopup() {
 
 const selectTrigger = document.querySelector(".select-trigger");
 const optionsList = document.querySelector(".options");
+const tkIcon = document.querySelectorAll(".tk_icon");
+const dollerIcon = document.querySelectorAll(".doller_icon");
 
+tkIcon.forEach((e) => e.style.display = "none")
 optionsList.style.display = "none"
+
 selectTrigger.addEventListener("click", function () {
     optionsList.style.display = optionsList.style.display === "none" ? "block" : "none";
 });
@@ -68,21 +72,24 @@ optionsList.addEventListener("click", function (event) {
         const selectedValue = event.target.getAttribute("data-value");
         if (selectedValue === "tk") {
             selectTrigger.querySelector("span").className = "fa-solid fa-bangladeshi-taka-sign";
-            tk_icon.classList.remove("tk_icon")
-            doller_icon.classList.add("tk_icon")
+            tkIcon.forEach((e) => e.style.display = "block")
+            dollerIcon.forEach((e) => e.style.display = "none")
         }
         else if (selectedValue === "doller") {
             selectTrigger.querySelector("span").className = "fa-solid fa-dollar-sign";
-            tk_icon.classList.add("tk_icon")
-            doller_icon.classList.remove("tk_icon")
+            tkIcon.forEach((e) => e.style.display = "none")
+            dollerIcon.forEach((e) => e.style.display = "block")
+
         }
         optionsList.style.display = "none";
     }
 });
 
 
+// ------ Select position 
 const selectPosition = document.querySelector(".select-position");
 const positionOptionsList = document.querySelector(".position-options");
+const savings = document.querySelector(".savings");
 
 positionOptionsList.style.display = "none"
 selectPosition.addEventListener("click", function () {
@@ -92,6 +99,9 @@ selectPosition.addEventListener("click", function () {
 positionOptionsList.addEventListener("click", function (event) {
     if (event.target.tagName === "LI") {
         const selectedValue = event.target.getAttribute("data-value");
+        if (selectedValue === "seller") {
+            savings.textContent = "Lose"
+        }
         selectPosition.querySelector("span").textContent = event.target.textContent;
         positionOptionsList.style.display = "none";
     }
