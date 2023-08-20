@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<!-- =========== Developer https://mostafizar.netlify.app/ ======= -->
+
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/image/fav.jpg">
+    <link rel="icon" type="image/x-icon" href="/image/fav.jpg" />
     <title>Discount Calculator</title>
     <!-- Font Awesome Icons -->
     <script
@@ -29,7 +31,7 @@
               <a href="mailto:support@calculatediscount.xyz">Contact Us</a>
             </li>
             <li>
-              <a href="m#">Donet Us</a>
+              <a href="m#">Donate Us</a>
             </li>
             <li>
               <a href="#" onclick="handlePrivacyPolicyPopup()"
@@ -47,39 +49,63 @@
 
     <!-- --------------- Home Start ---------- -->
     <section class="home" id="home">
-      <div class="calculator_wapper">
-        <h1>Discount Calculator</h1>
-        <div class="info">
-          <div class="custom-select">
-            <div class="select-position">
-              <span> As a customer </span>
-              <i class="fa-solid fa-chevron-down"></i>
+      <div class="container">
+        <div class="calculator_wapper">
+          <h1>Discount Calculator</h1>
+          <div class="info">
+            <div class="custom-select">
+              <div class="select-position">
+                <span> As a customer </span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <ul class="position-options">
+                <li data-value="customer">As a Customer</li>
+                <li data-value="seller">As a Seller</li>
+              </ul>
             </div>
-            <ul class="position-options">
-              <li data-value="customer">As a Customer</li>
-              <li data-value="seller">As a Seller</li>
-            </ul>
-          </div>
-          <div class="custom-select">
-            <div class="select-trigger">
-              <span class="fa-solid fa-dollar-sign"> </span>
-              <i class="fa-solid fa-chevron-down"></i>
+            <div class="custom-select">
+              <div class="select-trigger">
+                <span class="fa-solid fa-dollar-sign"> </span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <ul class="options">
+                <li data-value="doller">
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </li>
+                <li data-value="tk">
+                  <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+                </li>
+              </ul>
             </div>
-            <ul class="options">
-              <li data-value="doller">
-                <i class="fa-solid fa-dollar-sign"></i>
-              </li>
-              <li data-value="tk">
-                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
-              </li>
-            </ul>
           </div>
-        </div>
-        <div class="calculator">
-          <div>
-            <label for="originalPrice"> Original price </label>
-            <div class="input_group">
-              <div class="inputMoneySymbole">
+          <div class="calculator">
+            <div>
+              <label for="originalPrice"> Original price </label>
+              <div class="input_group">
+                <div class="inputMoneySymbole">
+                  <span class="doller_icon">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                  </span>
+                  <span class="tk_icon">
+                    <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+                  </span>
+                </div>
+                <input type="number" id="originalPrice" />
+              </div>
+            </div>
+            <div>
+              <label for="discountPercentage"> Discount </label>
+              <div class="input_group">
+                <div>%</div>
+                <input type="number" id="discountPercentage" />
+              </div>
+            </div>
+            <button onclick="calculatePercentage()">Calculator</button>
+          </div>
+          <div class="result">
+            <h5>
+              Discounted price:
+              <div class="inputMoneySymbole result_icon">
                 <span class="doller_icon">
                   <i class="fa-solid fa-dollar-sign"></i>
                 </span>
@@ -87,43 +113,21 @@
                   <i class="fa-solid fa-bangladeshi-taka-sign"></i>
                 </span>
               </div>
-              <input type="number" id="originalPrice" />
-            </div>
+              <span id="discountedPrice"></span>
+            </h5>
+            <h5>
+              <span class="savings">Savings:</span>
+              <div class="inputMoneySymbole result_icon">
+                <span class="doller_icon">
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </span>
+                <span class="tk_icon">
+                  <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+                </span>
+              </div>
+              <span id="savings"></span>
+            </h5>
           </div>
-          <div>
-            <label for="discountPercentage"> Discount </label>
-            <div class="input_group">
-              <div>%</div>
-              <input type="number" id="discountPercentage" />
-            </div>
-          </div>
-          <button onclick="calculatePercentage()">Calculator</button>
-        </div>
-        <div class="result">
-          <h5>
-            Discount price:
-            <div class="inputMoneySymbole">
-              <span class="doller_icon">
-                <i class="fa-solid fa-dollar-sign"></i>
-              </span>
-              <span class="tk_icon">
-                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
-              </span>
-            </div>
-            <span id="discountedPrice"></span>
-          </h5>
-          <h5>
-            <span class="savings">Savings:</span>
-            <div class="inputMoneySymbole">
-              <span class="doller_icon">
-                <i class="fa-solid fa-dollar-sign"></i>
-              </span>
-              <span class="tk_icon">
-                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
-              </span>
-            </div>
-            <span id="savings"></span>
-          </h5>
         </div>
       </div>
     </section>
@@ -309,8 +313,11 @@
             <img src="./image/logo.jpg" alt="" />
           </div>
           <small class="copyright"
-            >Copyright © 2023 
-            <a href="https://mostafizar.netlify.app/">Mostafizar</a>
+            >Copyright © 2023
+            <a
+              href="https://srmarketingbd.com/?fbclid=IwAR1KXo01vBUAfF-_9WOoIMDwE5weBadeoEZBb1AQoRfgAaTJQnVDUqP8rgo"
+              >SR Marketing</a
+            >
           </small>
         </div>
       </div>

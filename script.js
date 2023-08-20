@@ -13,11 +13,20 @@ navLinks.forEach((navLinks) => {
     });
 });
 
+
+const resultIcon = document.querySelectorAll(".result_icon")
+const result = document.querySelector(".result")
+
+resultIcon.forEach((e)=> e.style.display="none")
+result.style.display = "none"
+
 // ------ Calculator
 function calculatePercentage() {
     const originalPrice = parseFloat(document.getElementById("originalPrice").value);
     const discountPercentage = parseFloat(document.getElementById("discountPercentage").value);
 
+    resultIcon.forEach((e)=> e.style.display="block")
+    result.style.display = "block"
     // Calculate the discounted price
     const discountedPrice = originalPrice - (originalPrice * (discountPercentage / 100));
 
@@ -100,7 +109,10 @@ positionOptionsList.addEventListener("click", function (event) {
     if (event.target.tagName === "LI") {
         const selectedValue = event.target.getAttribute("data-value");
         if (selectedValue === "seller") {
-            savings.textContent = "Lose"
+            savings.textContent = "Lose: "
+        }
+        else if(selectedValue ==="customer"){
+            savings.textContent = "Savings: "
         }
         selectPosition.querySelector("span").textContent = event.target.textContent;
         positionOptionsList.style.display = "none";
