@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount Calculator</title>
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/1cbbb02fe6.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ----------- Header Start ----------- -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#home" class="logo">
+            <img src="./image/logo.jpg" alt="" />
+          </a>
+          <i class="fas fa-bars" id="ham-menu"></i>
+          <ul id="nav-bar">
+            <li>
+              <a href="./index.html">Home</a>
+            </li>
+            <li>
+              <a href="#" onclick="handleAboutPopup()">About</a>
+            </li>
+            <li>
+              <a href="#team">Team</a>
+            </li>
+            <li>
+              <a href="mailto:support@calculatediscount.xyz">Contact</a>
+            </li>
+            <li>
+              <a href="#" onclick="handlePrivacyPolicyPopup()"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- --------------- Header End ---------- -->
+
+    <!-- --------------- Home Start ---------- -->
+    <section class="home" id="home">
+      <div class="calculator_wapper">
+        <h1>Discount Calculator</h1>
+        <div class="info">
+          <div class="custom-select">
+            <div class="select-position">
+              <span> As a customer </span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <ul class="position-options">
+              <li data-value="">As a customer</li>
+              <li data-value="">As a buyer</li>
+            </ul>
+          </div>
+          <div class="custom-select">
+            <div class="select-trigger">
+              <span class="fa-solid fa-dollar-sign"> </span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <ul class="options">
+              <li data-value="doller">
+                <i class="fa-solid fa-dollar-sign"></i>
+              </li>
+              <li data-value="tk">
+                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="calculator">
+          <div>
+            <label for="originalPrice"> Original price </label>
+            <div class="input_group">
+              <div id="inputMoneySymbole">
+                <span id="doller_icon">
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </span>
+                <span id="tk_icon" class="tk_icon">
+                  <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+                </span>
+              </div>
+              <input type="number" id="originalPrice" />
+            </div>
+          </div>
+          <div>
+            <label for="discountPercentage"> Discount </label>
+            <div class="input_group">
+              <div>%</div>
+              <input type="number" id="discountPercentage" />
+            </div>
+          </div>
+          <button onclick="calculatePercentage()">Calculator</button>
+        </div>
+        <div class="result">
+          <h5>Original price: <span id="originalPriceResult"></span></h5>
+          <h5>Discount price: <span id="discountedPrice"></span></h5>
+        </div>
+      </div>
+    </section>
+    <!-- --------------- Home End --------- -->
+
+    <!-- --------------- About Start --------- -->
+    <div class="about popup">
+      <p>
+        A discount price calculator is a tool that helps you calculate the
+        discounted price of a product or service. If you are a customer then you
+        can know your Discounted Price and Savings amount through our website.
+        Besides, if you are a seller, then you can know how much money you will
+        lose if you give percent discount through our website and that too very
+        easily. So use our website without delay.
+      </p>
+      <div>
+        <button onclick="handleCloseAbout()">Close</button>
+      </div>
+    </div>
+    <!-- --------------- About End --------- -->
+
+    <!-- --------------- Privacy Policy Start --------- -->
+    <div class="privacy_policy popup">
+      <div>
+        <p><b>Privacy Policy</b></p>
+        <p>
+          Last Updated: [20.8.2023] This privacy policy describes how any
+          information you provide because of your visit to our website is
+          collected, used and protected.
+        </p>
+      </div>
+      <div>
+        <p><b>COLLECTION AND USE OF INFORMATION</b></p>
+        <p>
+          We may ask you to provide certain personally identifiable information
+          to contact you when you use our website. The purpose of collecting it
+          is:
+        </p>
+
+        <p>- Email address</p>
+        <p>- Usage information</p>
+
+        <p>
+          We collect this information to provide and improve our services, and
+          to respond to your inquiries. Your information is not shared or sold
+          with third parties unless required by law or with your express
+          consent.
+        </p>
+      </div>
+      <div>
+        <p><b>Log Data</b></p>
+        <p>
+          We collect information about your browser when you visit our website
+          ("log data"). This log data can be associated with information such
+          as:
+        </p>
+        <p>- The computer's Internet Protocol ("IP") address</p>
+        <p>- Browser type</p>
+        <p>- Browser version</p>
+        <p>- Information about the pages you have visited on our website</p>
+        <p>- The time and date you visited our website, the time and date</p>
+        <p>
+          - How much time you passed from those pages, and other circumstances
+        </p>
+        <p>
+          This information is used to analyze and improve the user experience on
+          our website.
+        </p>
+      </div>
+      <div>
+        <p><b>Cookies</b></p>
+        <p>
+          We use "cookies" to collect information and improve our website. You
+          have an option to accept or decline these cookies. Most web browsers
+          automatically accept cookies, but if you prefer, you can generally
+          decline cookies by changing your browser settings.
+        </p>
+      </div>
+      <div>
+        <p><b>Safety</b></p>
+        <p>
+          We are committed to keeping your information secure. However, please
+          note that there is no requirement that transmission of information
+          over the Internet or electronic storage is 100% secure. We try to use
+          commercially reasonable means to protect your personal information,
+          but there is no guarantee that it will be completely secure.
+        </p>
+      </div>
+      <div>
+        <p><b>Links to Other Websites</b></p>
+        <p>
+          Our website may contain links to other websites that we do not
+          operate. We have no control over the content and practices of these
+          websites and do not know their privacy policies. You are encouraged to
+          take care and review the privacy policies of any third-party websites
+          you visit.
+        </p>
+      </div>
+      <div>
+        <p><b>Contact Us</b></p>
+        <p>
+          If you have any questions regarding this Privacy Policy, please
+          contact us at support@calculateddiscount.xyz.
+        </p>
+      </div>
+      <div>
+        <p><b>Power to Change This Privacy Policy</b></p>
+        <p>
+          We may update our Privacy Policy from time to time. Any changes will
+          be posted on this page and the "Last Updated" date above will show the
+          latest update.
+        </p>
+      </div>
+      <div class="btn">
+        <button onclick="handleClosePrivacyPolicyPopup()">Close</button>
+      </div>
+    </div>
+    <!-- --------------- Privacy Policy End --------- -->
+
+    <!-- --------------- Fqa Start --------- -->
+    <section class="fqa">
+      <div class="container">
+        <h1>FQA</h1>
+        <div class="fqa_wapper">
+          <div>
+            <h2>What is 25% off of 1500?</h2>
+            <p>
+              25% off of 1500 is 375. The discounted amount would be 1125 and
+              the savings amount is 375.
+            </p>
+          </div>
+          <div>
+            <h2>How to calculate a discount?</h2>
+            <p>A Quick Guide to Calculating Discounts:</p>
+            <ol>
+              <li>Determine the original price.</li>
+              <li>Identify the discount percentage.</li>
+              <li>Multiply original price by discount percentage.</li>
+              <li>Subtract result from original price.</li>
+              <li>The answer is your discounted price.</li>
+            </ol>
+            <p>
+              Example: Original price $100, 20% discount. $100 x 0.20 = $20
+              discount. $100 - $20 = $80 final price.
+            </p>
+          </div>
+          <div>
+            <h2>How do I calculate a 25% discount?</h2>
+            <p>
+              Calculating a 25% discount is simple: Multiply the original price
+              by 0.25. Subtract the result from the original price to get the
+              discounted amount. Enjoy savings effortlessly!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- --------------- Fqa End --------- -->
+
+    <!-- --------------- Footer Start --------- -->
+    <footer>
+      <div class="container">
+        <div class="footer_wapper">
+          <div class="logo">
+            <img src="./image/logo.jpg" alt="" />
+          </div>
+          <small class="copyright"
+            >Developed by
+            <a href="https://mostafizar.netlify.app/">Mostafizar</a>
+          </small>
+        </div>
+      </div>
+    </footer>
+    <!-- --------------- Footer End --------- -->
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

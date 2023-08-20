@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e4e4e4;
+  /* position: relative; */
+}
+*:not(i) {
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --main--color: #000000;
+  --primary--color: #ffffff;
+  --secondary--color: #111111;
+  --bg--color: #2293c7;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: var(--primary--color);
+  text-decoration: none;
+}
+.container {
+  max-width: 1270px;
+  margin: 0 auto;
+}
+
+.popup {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 50rem;
+  width: 100%;
+  background-color: var(--main--color);
+  color: var(--primary--color);
+  padding: 4rem;
+  border-radius: 0.4rem;
+  display: none;
+}
+.popup p {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+.popup b {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.popup .btn {
+  display: flex;
+  justify-content: end;
+}
+.popup button {
+  background-color: #d92020;
+  color: var(--primary--color);
+  padding: 1rem 3rem;
+  border-radius: 0.2rem;
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+/* ================== Header Start ================ */
+header {
+  width: 100%;
+  background-color: var(--main--color);
+  padding: 2rem 5rem;
+}
+.logo img {
+  width: 22rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+nav a {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+nav a#logo {
+  color: var(--secondary--color);
+  font-weight: 700;
+}
+nav ul a {
+  color: var(--primary--color);
+  font-weight: 600;
+}
+nav ul a:hover {
+  border-bottom: 2px solid var(--primary--color);
+}
+#ham-menu {
+  display: none;
+}
+nav ul.active {
+  left: 0;
+}
+
+/* ================== Header End ================ */
+
+/* ================== Home Start ================ */
+.home {
+  display: grid;
+  place-items: center;
+  min-height: 100ch;
+}
+.home .calculator_wapper {
+  background-color: var(--main--color);
+  color: var(--primary--color);
+  padding: 4rem;
+  border-radius: 0.4rem;
+}
+.home h1 {
+  font-size: 3rem;
+}
+.home .info {
+  display: grid;
+  grid-template-columns: auto 25%;
+  gap: 3rem;
+}
+
+.home .custom-select {
+  position: relative;
+}
+
+.home .select-trigger,
+.select-position {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  background-color: var(--primary--color);
+  color: var(--main--color);
+  font-size: 1.4rem;
+}
+
+.home .options,
+.position-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary--color);
+  color: var(--main--color);
+  z-index: 1000;
+}
+
+.home .options li,
+.position-options li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.5rem;
+}
+
+.home .options li:hover {
+  background-color: var(--bg--color);
+}
+
+.home .position-options li:hover {
+  background-color: var(--bg--color);
+}
+
+.home .calculator {
+  margin-top: 3rem;
+}
+.home .calculator div {
+  margin-bottom: 2rem;
+}
+.home .calculator label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.home .calculator .input_group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.home .calculator .input_group div {
+  background-color: var(--bg--color);
+  height: 4rem;
+  width: 4rem;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  position: absolute;
+  border: 1px solid var(--main--color);
+  border-right: none;
+}
+.home .calculator .input_group input {
+  padding: 0rem 1rem;
+  padding-left: 5rem;
+  height: 4rem;
+  outline: none;
+  border: 1px solid var(--main--color);
+  width: 100%;
+}
+.tk_icon {
+  display: none;
+}
+.home .calculator button {
+  background-color: var(--bg--color);
+  color: var(--primary--color);
+  padding: 1rem 4rem;
+  font-size: 1.6rem;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+}
+.home .result {
+  margin-top: 2rem;
+}
+.home .result h5 {
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+}
+/* ================== Home End ================ */
+/* ================== FAQ Start ================ */
+.fqa {
+  margin-top: 10rem;
+  margin-bottom: 4rem;
+}
+.fqa h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.fqa .fqa_wapper div {
+  margin-bottom: 1.5rem;
+}
+.fqa .fqa_wapper h2 {
+  font-size: 2rem;
+}
+
+.fqa .fqa_wapper p {
+  font-size: 1.4rem;
+}
+
+.fqa .fqa_wapper ol {
+  margin-left: 2rem;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ================== FAQ End ================ */
+
+/* ================== About Start ================ */
+.privacy_policy {
+  max-width: 120rem;
+}
+.privacy_policy b {
+  margin-top: 2rem;
+}
+
+/* ================== About End ================ */
+
+/* ================== Footer Start ================ */
+footer {
+  background-color: var(--main--color);
+  padding: 5rem;
+}
+footer .footer_wapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .copyright {
+  font-size: 1.4rem;
+  color: var(--primary--color);
+}
+footer .copyright a {
+  color: var(--bg--color);
+}
+/* ================== Footer End ================ */
+
+/* --------Responsive  */
+@media only screen and (max-width: 991px) {
+  html {
+    font-size: 56.25%;
+  }
+  header {
+    padding: 2.2rem 5rem;
+  }
+  .fqa {
+    padding: 2.2rem 5rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+  #ham-menu {
+    display: block;
+    color: var(--primary--color);
+  }
+  nav a#logo,
+  #ham-menu {
+    font-size: 3.2rem;
+  }
+  nav ul {
+    background-color: var(--secondary--color);
+    position: fixed;
+    left: -100vw;
+    top: 73.6px;
+    width: 100vw;
+    height: calc(100vh - 73.6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: 1s;
+    gap: 0;
+    z-index: 1000;
+  }
+
+  
+}
+@media only screen and (max-width: 575px) {
+  html {
+    font-size: 46.87%;
+  }
+  header {
+    padding: 2rem 3rem;
+  }
+  nav ul {
+    top: 65.18px;
+    height: calc(100vh - 65.18px);
+  }
+  footer .footer_wapper{
+    flex-direction: column;
+    align-items: center;
+  }
+}
