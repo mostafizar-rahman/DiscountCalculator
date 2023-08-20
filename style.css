@@ -134,6 +134,7 @@ nav ul.active {
   max-width: 1270px;
   padding-top: 15rem;
   max-width: 830px;
+
 }
 .home h1 {
   font-size: 3rem;
@@ -253,6 +254,24 @@ nav ul.active {
 .home .result {
   margin-top: 2rem;
   /* display: none; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home .title {
+  background-color: var(--main--color);
+  color: var(--primary--color);
+  height: 5rem;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0 4rem;
 }
 .home .result h5 {
   font-size: 1.7rem;
@@ -260,17 +279,18 @@ nav ul.active {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+ 
 }
 /* ================== Home End ================ */
 /* ================== FAQ Start ================ */
 
-.fqa .container{
+.fqa .container {
   margin-top: 5rem;
   padding-top: 3rem;
   background-color: var(--primary--color);
 }
 .fqa .title {
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -287,16 +307,16 @@ nav ul.active {
 
 .fqa .question div {
   background-color: #239ad1c6;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3.2rem;
+  height: 3.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: var(--primary--color);
 }
 .fqa .question h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .fqa .fqa_wapper p {
