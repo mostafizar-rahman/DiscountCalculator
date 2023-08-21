@@ -16,10 +16,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 :root {
-  --main--color: #000000;
+  --main--color: #2293c7;
   --primary--color: #ffffff;
   --secondary--color: #111111;
-  --bg--color: #2293c7;
+  --bg--color: #000000;
 }
 ul {
   list-style: none;
@@ -34,46 +34,6 @@ a {
   padding: 0 2rem;
 }
 
-.popup {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 50rem;
-  width: 100%;
-  background-color: var(--main--color);
-  color: var(--primary--color);
-  padding: 4rem;
-  border-radius: 0.4rem;
-  display: none;
-  max-height: 40rem;
-  overflow-y: auto;
-}
-.popup p {
-  font-size: 1.6rem;
-  line-height: 2.2rem;
-}
-.popup b {
-  font-size: 1.6rem;
-  line-height: 2.2rem;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.popup button {
-  background-color: transparent;
-  color: var(--primary--color);
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 2.5rem;
-}
-
 /* ================== Header Start ================ */
 header {
   width: 100%;
@@ -82,8 +42,9 @@ header {
   position: fixed;
   z-index: 1000;
 }
-.logo img {
-  width: 22rem;
+.logo h3 {
+  font-size: 2.7rem;
+  color: var(--primary--color);
 }
 nav {
   display: flex;
@@ -128,13 +89,11 @@ nav ul.active {
 }
 
 .home .calculator_wapper {
-  color: var(--main--color);
   border-radius: 0.4rem;
   width: 100%;
   max-width: 1270px;
   padding-top: 15rem;
   max-width: 830px;
-
 }
 .home h1 {
   font-size: 3rem;
@@ -159,7 +118,6 @@ nav ul.active {
   align-items: center;
   border: 1px solid #ddd;
   background-color: var(--primary--color);
-  color: var(--main--color);
   font-size: 1.4rem;
   border-radius: 0.5rem;
 }
@@ -174,7 +132,6 @@ nav ul.active {
   left: 0;
   width: 100%;
   background-color: #f0f0f0;
-  color: var(--main--color);
   z-index: 1000;
   border-radius: 0.5rem;
 }
@@ -188,11 +145,11 @@ nav ul.active {
 }
 
 .home .options li:hover {
-  background-color: var(--bg--color);
+  background-color: var(--main--color);
 }
 
 .home .position-options li:hover {
-  background-color: var(--bg--color);
+  background-color: var(--main--color);
 }
 
 .home .calculator {
@@ -268,7 +225,7 @@ nav ul.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   margin-bottom: 1rem;
   width: 100%;
   padding: 0 4rem;
@@ -279,7 +236,6 @@ nav ul.active {
   display: flex;
   align-items: center;
   gap: 0.7rem;
- 
 }
 /* ================== Home End ================ */
 /* ================== FAQ Start ================ */
@@ -334,11 +290,44 @@ nav ul.active {
 /* ================== FAQ End ================ */
 
 /* ================== About Start ================ */
-.privacy_policy {
-  max-width: 90rem;
+
+.about .about_banner {
+  background-color: var(--bg--color);
+  width: 100%;
+  min-height: 25rem;
+  position: relative;
 }
-.privacy_policy b {
-  margin-top: 2rem;
+.about .title {
+  text-align: center;
+  font-size: 4rem;
+  color: var(--primary--color);
+  padding: 2rem;
+}
+.about .image {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  border: 1px solid var(--secondary--color);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background-color: #ddd;
+}
+.about .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.info {
+  max-width: 90rem;
+  margin: 0 auto;
+  margin-top: 20rem;
+}
+.info p {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 /* ================== About End ================ */
